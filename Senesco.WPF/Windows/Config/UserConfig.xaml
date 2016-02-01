@@ -1,0 +1,125 @@
+﻿<Window x:Class="Senesco.WPF.Windows.Config.UserConfig"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   Style="{StaticResource {x:Type Window}}"
+   SizeChanged="Window_SizeChanged"
+   LocationChanged="Window_LocationChanged"
+   Title="User Configuration"
+   ResizeMode="NoResize"
+   SizeToContent="Height"
+   Width="450">
+
+   <Grid Margin="5">
+      
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="Auto"/>
+         <ColumnDefinition Width="Auto"/>
+         <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      
+      <Grid.RowDefinitions>
+         <RowDefinition Height="Auto"/>
+         <RowDefinition Height="Auto"/>
+         <RowDefinition Height="Auto"/>
+         <RowDefinition Height="*"/>
+         <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      
+      <!-- Nick field -->
+      <Grid Grid.Row="0" Grid.Column="0"
+            Margin="5">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+         </Grid.ColumnDefinitions>
+         
+         <TextBlock Grid.Column="0"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    Text="Nick:"/>
+         <TextBox Grid.Column="1"
+                  x:Name="m_nick"
+                  VerticalAlignment="Center"/>
+      </Grid>
+
+      <!-- Ignore PM/Chat requests -->
+      <CheckBox x:Name="m_ignorePrivateMsgs"
+                Grid.Row="1" Grid.Column="0"
+                Margin="10"
+                Content=" Ignore Private Messages"/>
+      
+      <CheckBox x:Name="m_ignorePrivateChat"
+                Grid.Row="2" Grid.Column="0"
+                Margin="10"
+                Content=" Ignore Private Chat Requests"/>
+
+      <!-- Ignored request auto-response text field and label -->
+      <StackPanel Orientation="Vertical"
+                  Grid.Row="3" Grid.Column="0"
+                  Margin="5">
+         <TextBlock VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    Margin="5"
+                    Text="Ignored Request Auto-Response:"/>
+         <TextBox x:Name="m_ignoreAutoResponse"
+                  Margin="5"
+                  Height="40"
+                  TextWrapping="Wrap"
+                  VerticalAlignment="Center"/>
+      </StackPanel>
+      
+      <!-- GridSplitter -->
+      <GridSplitter Grid.Row="0" Grid.RowSpan="4"
+                    Grid.Column="1"
+                    IsEnabled="False"
+                    Background="{DynamicResource MenuItemSeparator}"
+                    ResizeBehavior="PreviousAndNext"
+                    ResizeDirection="Columns"
+                    Width="5"
+                    VerticalAlignment="Stretch"
+                    SnapsToDevicePixels="True"/>
+      
+      <!-- Temporary Icon Number Entry -->
+      <Grid Grid.Row="0" Grid.Column="2"
+            Margin="5">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+         </Grid.ColumnDefinitions>
+
+         <TextBlock Grid.Column="0"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    Text="Icon Number:"/>
+         <TextBox Grid.Column="1"
+                  x:Name="m_icon"
+                  VerticalAlignment="Center"/>
+      </Grid>
+
+      <!-- Icon Chooser -->
+      <ListBox x:Name="m_iconSelector"
+               Grid.Row="1" Grid.RowSpan="3" Grid.Column="2"
+               Margin="5"
+               ItemsSource="{Binding}"/>
+
+      <!-- Close Buttons -->
+      <StackPanel Orientation="Horizontal"
+                  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+                  HorizontalAlignment="Right">
+         <Button x:Name="m_cancelButton"
+                 Margin="5"
+                 Padding="10,2,10,2"
+                 IsCancel="True"
+                 Content="Cancel"/>
+         <Button x:Name="m_saveButton"
+                 Margin="5"
+                 Padding="10,2,10,2"
+                 IsDefault="True"
+                 Click="SaveButton_Click"
+                 Content="Save"/>
+      </StackPanel>
+      
+   </Grid>
+</Window>

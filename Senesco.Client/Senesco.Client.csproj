@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3C93C4C-6851-4E0A-8554-6723ED2A0E69}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Senesco.Client</RootNamespace>
+    <AssemblyName>Senesco.Client</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Communication\Connection.cs" />
+    <Compile Include="Communication\Package.cs" />
+    <Compile Include="Events\ChatReceivedEventArgs.cs" />
+    <Compile Include="Events\ConnectedEventArgs.cs" />
+    <Compile Include="Events\DisconnectedEventArgs.cs" />
+    <Compile Include="Events\EventHandlers.cs" />
+    <Compile Include="Events\NewVersionEventArgs.cs" />
+    <Compile Include="Events\PrivateMsgEventArgs.cs" />
+    <Compile Include="Events\ProgressUpdatedEventArgs.cs" />
+    <Compile Include="Events\SocketExceptionEventArgs.cs" />
+    <Compile Include="Events\TransactionEventArgs.cs" />
+    <Compile Include="Events\UserInfoEventArgs.cs" />
+    <Compile Include="Events\UserListUpdateEventArgs.cs" />
+    <Compile Include="SenescoController.cs" />
+    <Compile Include="Communication\Server.cs" />
+    <Compile Include="Sound\SoundController.cs" />
+    <Compile Include="Sound\SoundEffect.cs" />
+    <Compile Include="Sound\SoundProfile.cs" />
+    <Compile Include="Sound\SoundItem.cs" />
+    <Compile Include="Utility\AutoUpdate.cs" />
+    <Compile Include="Utility\DownloadFile.cs" />
+    <Compile Include="Utility\User.cs" />
+    <Compile Include="Utility\UserFlags.cs" />
+    <Compile Include="Utility\UserList.cs" />
+    <Compile Include="Transactions\Objects\AutoResponse.cs" />
+    <Compile Include="Transactions\Objects\UserOptions.cs" />
+    <Compile Include="Transactions\SetUserInfo.cs" />
+    <Compile Include="Transactions\Objects\ObjectData\EncodedString.cs" />
+    <Compile Include="Transactions\Objects\ObjectData\IHotlineObjectData.cs" />
+    <Compile Include="Transactions\Objects\ObjectData\Long.cs" />
+    <Compile Include="Transactions\Objects\ObjectData\NormalString.cs" />
+    <Compile Include="Transactions\Objects\ObjectData\Number.cs" />
+    <Compile Include="Transactions\Objects\ObjectData\RawString.cs" />
+    <Compile Include="Transactions\Objects\ObjectData\Short.cs" />
+    <Compile Include="Transactions\Objects\BannerId.cs" />
+    <Compile Include="Transactions\Objects\ChatWindow.cs" />
+    <Compile Include="Transactions\Objects\ErrorMessage.cs" />
+    <Compile Include="Transactions\Objects\HotlineObject.cs" />
+    <Compile Include="Transactions\Objects\Icon.cs" />
+    <Compile Include="Transactions\Objects\Message.cs" />
+    <Compile Include="Transactions\Objects\Nick.cs" />
+    <Compile Include="Transactions\Objects\ObjectFactory.cs" />
+    <Compile Include="Transactions\Objects\Parameter.cs" />
+    <Compile Include="Transactions\Objects\Password.cs" />
+    <Compile Include="Transactions\Objects\ServerName.cs" />
+    <Compile Include="Transactions\Objects\Subject.cs" />
+    <Compile Include="Transactions\Objects\UserId.cs" />
+    <Compile Include="Transactions\Objects\UserListEntry.cs" />
+    <Compile Include="Transactions\Objects\UserName.cs" />
+    <Compile Include="Transactions\Objects\UserStatus.cs" />
+    <Compile Include="Transactions\Objects\Version.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transactions\ChangeStatus.cs" />
+    <Compile Include="Transactions\Disconnected.cs" />
+    <Compile Include="Transactions\GetUserInfo.cs" />
+    <Compile Include="Transactions\GetUserList.cs" />
+    <Compile Include="Transactions\Login.cs" />
+    <Compile Include="Transactions\PmReceive.cs" />
+    <Compile Include="Transactions\PmSend.cs" />
+    <Compile Include="Transactions\RelayChat.cs" />
+    <Compile Include="Transactions\SendChat.cs" />
+    <Compile Include="Transactions\Transaction.cs" />
+    <Compile Include="Transactions\TransactionFactory.cs" />
+    <Compile Include="Transactions\UserChange.cs" />
+    <Compile Include="Transactions\UserLeave.cs" />
+    <Compile Include="Utility\ActionQueue.cs" />
+    <Compile Include="Utility\ConfigSettings.cs" />
+    <Compile Include="Utility\DataUtils.cs" />
+    <Compile Include="Utility\FileUtils.cs" />
+    <Compile Include="Utility\Log.cs" />
+    <Compile Include="Utility\RegistryUtils.cs" />
+    <Compile Include="Utility\SoundUtils.cs" />
+    <Compile Include="Utility\Status.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ReadMe.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

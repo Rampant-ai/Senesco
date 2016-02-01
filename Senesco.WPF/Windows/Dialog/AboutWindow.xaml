@@ -1,0 +1,42 @@
+﻿<Window x:Class="Senesco.WPF.Windows.Dialog.AboutWindow"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   Style="{StaticResource {x:Type Window}}"
+   SizeChanged="Window_SizeChanged"
+   LocationChanged="Window_LocationChanged"
+   KeyDown="Window_KeyDown"
+   SizeToContent="WidthAndHeight"
+   ResizeMode="NoResize"
+   >
+   <Grid>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition />
+         <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+         <RowDefinition />
+         <RowDefinition />
+      </Grid.RowDefinitions>
+
+      <Image Grid.Row="0" Grid.Column="0" Height="100" Width="100" Source="/Senesco;component/Resources/rusty.ico" />
+
+      <StackPanel Grid.Row="0" Grid.Column="1"
+                  Margin="10,10"
+                  Orientation="Vertical">
+         <Label Name="m_product" Margin="2" TextBlock.FontSize="14" FontWeight="Bold" />
+         <Label Name="m_version" Margin="2" />
+         <Label Name="m_copyright" Margin="2" />
+         <Label Name="m_company" Margin="2" />
+         <Label Name="m_description" Margin="2" />
+      </StackPanel>
+
+      <Button Grid.Row="1" Grid.ColumnSpan="2"
+              Margin="0,0,10,10"
+              Padding="15,2"
+              HorizontalAlignment="Right"
+              Content="OK"
+              IsDefault="True"
+              Click="Button_Click" />
+
+   </Grid>
+</Window>

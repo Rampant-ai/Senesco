@@ -1,0 +1,204 @@
+x.x.x (Planned for an upcoming version)
+-----
+*** Add some controls to the auto-updater process (eg. don't check for updates).
+*** Fix reconnect timer and some issues with bad states from disconnecting and reconnecting.
+*** Update user list window to display with simple user icons.
+*** Make user list into a control which can run as both a chat sidebar and new window.
+*** Add CTRL shortcuts to quick-bookmarks.
+*** Fix focus issues with pressing some of the CTRL keyboard shortcuts.
+*** Disallow commands until a positive login response is received.
+*** Better testing when the local IP has changed.
+*** Add legal to the ReadMe.
+*** Remove bookmarks via GUI.
+*** Register .sbm with Windows on startup (and/or install).
+
+0.8.4
+-----
+Tweaks to the event system so that reconnects are less likely to cause chat duplication.
+
+0.8.3
+-----
+Added auto-updater which can check for updates and download/install a new version.
+Removed "startup" .NET version tags from config files.  They only got in the way.
+
+0.8.2
+-----
+Reorganized chat window's code-behind into a proper WPF presenter class.
+Add custom styling to the WPF progress bar.
+When connecting to a server fails, progress bar turns fully red for extra feedback.
+Fixed failed login behavior.
+Hooked up auto-reconnect system in the controller; all implementations have it.
+Refactored many internals in support of the reconnect timer.
+Removed a dead code directory from the repository.
+
+0.8.1
+-----
+Added a user settings upgrade system so settings are not lost between versions.
+Added URL detection and clicking in the WPF chat window.
+Improved behavior of emote-modifier key (now just control).
+Updated About window.
+
+0.8.0
+-----
+Initial version of Forms application.  This will run faster and can be used in Mono.
+Added keyboard shortcuts to WPF menu system.
+
+0.7.5
+-----
+Updated compiler to Visual Studio 2010.
+Console version requires ".NET Framework 3.0".
+WPF version requires ".NET Framework 4.0".
+The sounds window now always auto-sizes to content and cannot be resized.
+Fixed some state issues when failing to connect to a server.
+Added /bookmark save and delete commands to console version.
+Changing the console command prefix using /prefix is now persistent.
+Fixed a parsing bug when with the command prefix was longer than one character.
+Tweaked layout of Sounds window to use the available space better.
+Fixed the "Auto Connect To" feature, which broke with advent of the console version.
+Fixed Connect dialog's cramped layout in Windows 7.
+Fixed a crash with a no-nick ghost user.
+Users with the same nick no longer have buggy selections in the user list.
+Added "Reply" button to PM receive window and a quote panel for PM compose window.
+Added an Expander to collapse the redundant User List window buttons.
+
+0.7.4
+-----
+Sounds window now shows the individual files again, and has a "play" button.
+Fixed a few improperly named files in the included sound profiles.
+Fixed Thief profile to have more compatible wav files, so they actually play now.
+Tweaked which sounds were which actions in some of the profiles.
+Added Empty and User sound profiles.
+
+0.7.3
+-----
+Added try/catch to prevent crashing when unsupported .wav files are played.
+
+0.7.2
+-----
+Completed the partially implemented User Settings window.
+Reorganized namespaces, which probably breaks all saved settings (except bookmarks).
+Added sound profile system.
+
+0.7.1
+-----
+Vastly improved console input/output.
+Added several commands with a major refactoring of command system.
+Added /nick and /icon to the console version, paving the way for the WPF version.
+"Connect" command can now accept either a bookmark name or ad-hoc server settings.
+Launching console via command line now works just like the new "connect" command.
+Fixed some minor layout issues in "Connect To Server" and "Sounds" windows.
+Added user config window, finally allowing changing of nick and icon.
+
+0.7.0
+-----
+Fixed buttons looking like they are still pressed after being clicked.
+Rewrote bookmark saving so it won't ever break again from unrelated changes.
+Added dirt-cheap password encoding for bookmarks.
+Reorganized solution into two projects to separate the GUI from the back-end.
+Created "Senesco.Console" project which runs in a shell.
+
+0.6.3
+-----
+Fixed auto-connect checkmark not being drawn.
+Added menu option for showing the User List window.
+Fixed some minor issues with having an empty user list.
+Added custom About window.
+Improved window position saving.
+
+0.6.2
+-----
+Added right-click and double-click functionality to Users window.
+Added ListBox "Selected" style for the user list.
+Added Button "Hover" and "Pressed" styles.
+Added "Default" buttons in each window.
+Reorganized "Connect to Server" and "Send/Receive PM" windows.
+Usability changes like default keyboard focus and pressing Escape to close dialogs.
+
+0.6.1
+-----
+Fixed delete key deleting all chat in the buffer.
+Fixed lines not wrapping in main chat area.
+Re-enabled and fixed chat auto-scroll.
+Fixed scrolling in the "Get User Info" and PM send/receive windows.
+Fixed some minimum window sizes.
+Changed socket to disconnect asynchronously.
+*** Still need to fix checkmark not showing up in the auto-connect menu.
+
+0.6.0
+-----
+Simplified XAML layout of main chat window.
+Refactored XAML to incorporate resource styles.
+Significant GUI operations now properly run asynchronously.
+Added progress bar for the "Connect to Server" operation.
+Small improvements to the event system.
+
+0.5.1
+-----
+Added a default About Box under Help->About.
+Fixed userlist never updating.
+
+0.5.0
+-----
+Added user-configurable sound system.
+Refactored delegates into an event system.
+
+0.4.1
+-----
+Added auto-login at boot time via menu option, using "HKCU > ... > Run" registry key.
+Added menu options to open the chat log and reveal the chat log files.
+Added separate windows for received private messages and user info.
+Added saving of window positions.
+
+0.4.0
+-----
+Updated the defaults in the connect window text boxes.
+Opening an ".sbm" Senesco bookmark with Senesco will immediately connect to that server.
+Users window now defaults to a better position relative to the main chat window.
+Made text in the main chat window selectable.
+Changed chat font to a monospaced font.
+Added functional "Get Info" and "Send PM" buttons to the users window.
+Added better handling for error messages from the server.
+
+0.3.1
+-----
+Changed some namespaces, and as a result previously saved bookmarks fail to deserialize.
+Reorganized user object system for the remaining user transactions and different view implementations.
+
+0.3.0
+-----
+Added basic user list window.
+Fix significant bug with parsing strings from byte streams.
+Added timer to clean up active transactions that the server never replies to (fixes memory leak).
+All transactions are now cleaned up by the new timer since the server can send multiple replies.
+
+0.2.3
+-----
+Added chat logging.
+Domain names and colon-suffixed ports are now supported in the server address field.
+Chat box keeps chat scrolled down unless the user is manually scrolled up.
+Failing to connect to a server is now gracefully handled.
+
+0.2.2
+-----
+Changed target .NET Framework to 3.0 from 3.5.
+Chat window now has a movable partition between chat display and chat entry.
+Added planned feature list to ReadMe.
+Now using version numbers that display in the .exe file's properties.
+
+0.2.1
+-----
+Added KeepAlive timer.
+Fixed some window closing issues.
+
+0.2.0
+-----
+Added dedicated server connection GUI.
+Implemented bookmarks.
+
+0.1.1
+-----
+Minor changes.
+
+0.1.0
+-----
+Initial release.

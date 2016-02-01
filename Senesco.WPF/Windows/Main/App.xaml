@@ -1,0 +1,22 @@
+﻿<Application x:Class="Senesco.WPF.Windows.Main.App"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   Startup="Application_Startup">
+   <Application.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="..\..\Resources\Button.xaml" />
+            <ResourceDictionary Source="..\..\Resources\Label.xaml" />
+            <ResourceDictionary Source="..\..\Resources\ListBox.xaml" />
+            <ResourceDictionary Source="..\..\Resources\Menu.xaml" />
+            <ResourceDictionary Source="..\..\Resources\ProgressBar.xaml" />
+            <ResourceDictionary Source="..\..\Resources\ResizeGrip.xaml" />
+            <ResourceDictionary Source="..\..\Resources\ScrollBar.xaml" />
+            <ResourceDictionary Source="..\..\Resources\ScrollViewer.xaml" />
+            <ResourceDictionary Source="..\..\Resources\Shared.xaml" />
+            <ResourceDictionary Source="..\..\Resources\TextBox.xaml" />
+            <ResourceDictionary Source="..\..\Resources\Window.xaml" />
+         </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+   </Application.Resources>
+</Application>

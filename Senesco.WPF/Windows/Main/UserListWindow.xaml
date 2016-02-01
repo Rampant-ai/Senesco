@@ -1,0 +1,42 @@
+﻿<Window x:Class="Senesco.WPF.Windows.Main.UserListWindow"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   Style="{StaticResource {x:Type Window}}"
+   SizeChanged="Window_SizeChanged"
+   LocationChanged="Window_LocationChanged"
+   Title="Senesco: Users"
+   Height="350" Width="280"
+   MinHeight="180" MinWidth="180">
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="Auto" />
+         <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <Expander IsExpanded="True"
+                ExpandDirection="Right">
+         <StackPanel Grid.Row="0"
+                     Margin="8"
+                     Orientation="Horizontal">
+
+            <Button Name="m_sendPmButton"
+                    Height="23" Width="70"
+                    Margin="0,0,8,0"
+                    Click="SendPm_EventHandler"
+                    Content="Send PM" />
+
+            <Button Name="m_getUserInfoButton"
+                    Height="23" Width="70"
+                    Click="GetUserInfo_EventHandler"
+                    Content="Get Info" />
+
+         </StackPanel>
+      </Expander>
+
+      <ListBox Grid.Row="1"
+               Name="m_userListBox"
+               Margin="8,0,8,8"
+               Focusable="True"
+               MouseDoubleClick="SendPm_EventHandler" />
+   </Grid>
+</Window>
